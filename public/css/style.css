@@ -1,0 +1,13 @@
+body {
+	font-family: sans-serif;
+	text-align: center;
+	background: url('/img/brickwall.png');
+}
+
+h1 {
+	font-size: 64px;
+}
+
+.form-control {
+	width: 300px;
+}

@@ -1,0 +1,91 @@
+{
+ "responseHeader":{
+  "status":0,
+  "QTime":10,
+  "params":{
+        "wt":"json",
+        "facet":"true",
+        "hl.fl":"name,features",
+        "facet.mincount":"1",
+        "facet.field":"cat",
+        "indent":"on",
+        "hl":"true",
+        "q":"video"}},
+ "response":{"numFound":3,"start":0,"docs":[
+        {
+         "id":"MA147LL/A",
+         "sku":"MA147LL/A",
+         "name":"Apple 60 GB iPod with Video Playback Black",
+         "manu":"Apple Computer Inc.",
+         "includes":"earbud headphones, USB cable",
+         "weight":5.5,
+         "price":399.0,
+         "popularity":10,
+         "inStock":true,
+         "timestamp":"2007-01-31T05:12:44.562Z",
+         "cat":[
+          "electronics",
+          "music"],
+         "features":[
+          "iTunes, Podcasts, Audiobooks",
+          "Stores up to 15,000 songs, 25,000 photos, or 150 hours of video",
+          "2.5-inch, 320x240 color TFT LCD display with LED backlight",
+          "Up to 20 hours of battery life",
+          "Plays AAC, MP3, WAV, AIFF, Audible, Apple Lossless, H.264 video",
+          "Notes, Calendar, Phone book, Hold button, Date display, Photo wallet, Built-in games, JPEG photo playback, Upgradeable firmware, USB 2.0 compatibility, Playback speed control, Rechargeable capability, Battery level indication"]},
+        {
+         "id":"EN7800GTX/2DHTV/256M",
+         "sku":"EN7800GTX/2DHTV/256M",
+         "name":"ASUS Extreme N7800GTX/2DHTV (256 MB)",
+         "manu":"ASUS Computer Inc.",
+         "weight":16.0,
+         "price":479.95,
+         "popularity":7,
+         "inStock":false,
+         "timestamp":"2007-01-31T05:12:45.187Z",
+         "cat":[
+          "electronics",
+          "graphics card"],
+         "features":[
+          "NVIDIA GeForce 7800 GTX GPU/VPU clocked at 486MHz",
+          "256MB GDDR3 Memory clocked at 1.35GHz",
+          "PCI Express x16",
+          "Dual DVI connectors, HDTV out, video input",
+          "OpenGL 2.0, DirectX 9.0"]},
+        {
+         "id":"100-435805",
+         "sku":"100-435805",
+         "name":"ATI Radeon X1900 XTX 512 MB PCIE Video Card",
+         "manu":"ATI Technologies",
+         "weight":48.0,
+         "price":649.99,
+         "popularity":7,
+         "inStock":false,
+         "timestamp":"2007-01-31T05:12:45.203Z",
+         "cat":[
+          "electronics",
+          "graphics card"],
+         "features":[
+          "ATI RADEON X1900 GPU/VPU clocked at 650MHz",
+          "512MB GDDR3 SDRAM clocked at 1.55GHz",
+          "PCI Express x16",
+          "dual DVI, HDTV, svideo, composite out",
+          "OpenGL 2.0, DirectX 9.0"]}]
+ },
+ "facet_counts":{
+  "facet_queries":{},
+  "facet_fields":{
+        "cat":[
+         "electronics",3,
+         "card",2,
+         "graphics",2,
+         "music",1]}},
+ "highlighting":{
+  "MA147LL/A":{
+        "name":["Apple 60 GB iPod with <em>Video</em> Playback Black"],
+        "features":["Stores up to 15,000 songs, 25,000 photos, or 150 hours of <em>video</em>"]},
+  "EN7800GTX/2DHTV/256M":{
+        "features":["Dual DVI connectors, HDTV out, <em>video</em> input"]},
+  "100-435805":{
+        "name":["ATI Radeon X1900 XTX 512 MB PCIE <em>Video</em> Card"]}}
+}

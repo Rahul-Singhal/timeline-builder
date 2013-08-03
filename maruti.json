@@ -1,0 +1,51 @@
+{
+  "responseHeader":{
+    "status":0,
+    "QTime":1,
+    "params":{
+      "fl":"name,id,date",
+      "indent":"on",
+      "q":"Maruti",
+      "wt":"json"}},
+  "response":{"numFound":531,"start":0,"docs":[
+      {
+        "id":"508051",
+        "name":"Maruti Suzuki won't upgrade Maruti 800 model - chairman",
+        "date":"First Published: 16:30 IST(12/2/2010)"},
+      {
+        "id":"266744",
+        "name":"India's Maruti December sales up 10 % on year",
+        "date":"First Published: 10:20 IST(2/1/2008)"},
+      {
+        "id":"513121",
+        "name":"Maruti raises car prices after duty hike",
+        "date":"First Published: 13:37 IST(26/2/2010)"},
+      {
+        "id":"248471",
+        "name":"Maruti Udyog is now Maruti Suzuki India Ltd",
+        "date":"First Published: 14:04 IST(18/9/2007)"},
+      {
+        "id":"493404",
+        "name":"Maruti sells one lakh in Dec 2009",
+        "date":"First Published: 21:48 IST(3/1/2010)"},
+      {
+        "id":"268304",
+        "name":"Rs 1 lakh car may have some impact on sales: Maruti",
+        "date":"First Published: 17:26 IST(9/1/2008)"},
+      {
+        "id":"268339",
+        "name":"Rs 1 lakh car may have some impact on sales: Maruti",
+        "date":"First Published: 18:37 IST(9/1/2008)"},
+      {
+        "id":"509838",
+        "name":"Say goodbye to Maruti 800",
+        "date":"First Published: 17:49 IST(17/2/2010)"},
+      {
+        "id":"335647",
+        "name":"Maruti plans to launch A-star in October",
+        "date":"First Published: 11:33 IST(4/9/2008)"},
+      {
+        "id":"38066",
+        "name":"Govt to sell whole of Maruti stake",
+        "date":"First Published: 14:34 IST(10/1/2006)"}]
+  }}
