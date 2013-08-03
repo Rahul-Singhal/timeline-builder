@@ -5,41 +5,35 @@
         "type":"default",
         "text":"<p>Intro body text goes here, some HTML is ok</p>",
         "asset": {
-            "media":"http://yourdomain_or_socialmedialink_goes_here.jpg",
+            "media":"",
             "credit":"Credit Name Goes Here",
             "caption":"Caption text goes here"
         },
         "date": [
             {
                 "startDate":"2011,12,10",
-                "endDate":"2011,12,11",
-                "headline":"Headline Goes Here",
+                "headline":"Headline Goes Here 1",
                 "text":"<p>Body text goes here, some HTML is OK</p>",
                 "tag":"This is Optional",
                 "classname":"",
                 "asset": {
-                    "media":"http://twitter.com/ArjunaSoriano/status/164181156147900416",
-                    "thumbnail":"optional-32x32px.jpg",
+                    "media":"http://upload.wikimedia.org/wikipedia/commons/thumb/2/26/YellowLabradorLooking_new.jpg/260px-YellowLabradorLooking_new.jpg",
                     "credit":"Credit Name Goes Here",
                     "caption":"Caption text goes here"
                 }
             },
             {
                 "startDate":"2012,12,10",
-                "endDate":"2012,12,11",
-                "headline":"Headline Goes Here",
+                "headline":"Headline Goes Here 2",
                 "text":"<p>Body goes here, some HTML is OK</p>",
                 "tag":"This is Optional",
                 "classname":"",
                 "asset": {
-                    "media":"",
-                    "thumbnail":"optional-32x32px.jpg",
+                    "media":"<blockquote>abcd</blockquote>",
                     "credit":"Credit Name Goes Here",
                     "caption":"Caption text goes here"
                 }
             }
-        ],
-        "era": [
         ]
     }
 }

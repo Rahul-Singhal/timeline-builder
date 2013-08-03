@@ -8,6 +8,17 @@ h1 {
 	font-size: 64px;
 }
 
+section {
+	background: #fff;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 10px;
+	width: 710px;
+	border: solid;
+	border-radius: 10px;
+	border-width: 1px;
+}
+
 .form-control {
 	width: 300px;
 }
