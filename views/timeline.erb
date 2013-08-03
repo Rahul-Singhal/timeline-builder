@@ -1,3 +1,5 @@
+<p>You are viewing the timeline for <strong><%= @name %></strong></p>
+
 <script type="text/javascript" src="/js/storyjs-embed.js"></script>
 <script>
     var json = <%= @json %>;
@@ -7,6 +9,7 @@
             width:      '100%',
             height:     '600',
             source:     json,
+            font:       '',
             embed_id:   'my-timeline'
         });
     });

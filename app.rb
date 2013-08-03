@@ -59,7 +59,7 @@ helpers do
         summary_uniq = []
         10.times { summary_uniq << summary_array.sample }
         summary_uniq.uniq!
-        summary_uniq = summary_uniq[0..3]
+        summary_uniq = summary_uniq[0..2]
       else
         puts "=|"*50
         puts summary_uniq
@@ -70,8 +70,10 @@ helpers do
       if image.empty?
         media = ""
         summary_uniq.each do |sentence|
-          media << "<blockquote>#{sentence}</blockquote>"
+          addition = "<blockquote>#{sentence}</blockquote>"
+          media << addition unless (media+addition).length > 600
         end
+        # media = "<blockquote>#{summary_array.sample}</blockquote>"
       else
         media = image
       end
@@ -79,7 +81,7 @@ helpers do
       new_event = {
         "startDate" => date,
         "headline" => headline,
-        # "text" => "<a href=#{link}>Link to the article</a>",
+        "text" => "<a href=#{link}>Link to the article</a>",
         "asset" => {
           # "media" => link,
           # "media" => "<blockquote>Sample 1</blockquote><blockquote>Sample 2</blockquote>",

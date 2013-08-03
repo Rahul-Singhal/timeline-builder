@@ -1,12 +1,11 @@
 <div class="home">
 	<h1><%= title %></h1>
 
-	<p>Type in a name below, and get a timeline of what that person has been upto recently.</p>
+	<p>Type in a search term (event / person / company...) to get a timeline.</p>
 
 	<div class="form-inline">
 		<form name="homepageform" onsubmit="return checkEmpty()" action="/timeline" method="POST">
-			<label for="name">Get timeline for</label>
-			<input type name="name" id="name" class="form-control" placeholder="Some person"/>
+			<input type name="name" id="name" class="form-control" placeholder="event"/>
 			<button class="btn btn-success" type="submit">Go!</button>
 		</form>
 	</div>

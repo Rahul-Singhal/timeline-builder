@@ -4,10 +4,10 @@ body {
 	background: url('/img/brickwall.png');
 }
 
-h1 {
+/*h1 {
 	font-size: 64px;
 	font-weight: bold;
-}
+}*/
 
 section {
 	margin-top: 20px;
@@ -40,4 +40,16 @@ section {
   *display:inline; /* ie7 fix */
   *zoom:1; /* hasLayout ie7 trigger */
   vertical-align: top;
+}
+
+h1 {
+  font: 400 95px/1.6 'Pacifico', Georgia, serif;
+}
+ 
+/*p {
+  font: 400 16px/1.6 'Arimo', Verdana, Helvetica, sans-serif;
+}*/
+
+p {
+  font: 400 17px/1.6 'Gudea', Verdana, Helvetica, sans-serif;
 }
