@@ -1,9 +1,6 @@
 <script type="text/javascript" src="/js/storyjs-embed.js"></script>
 <script>
-    var json;
-    $.getJSON('/template.json', function(response) {
-        json = response;
-    });
+    var json = <%= @json %>;
     $(document).ready(function() {
         createStoryJS({
             type:       'timeline',
@@ -11,10 +8,9 @@
             height:     '600',
             source:     json,
             embed_id:   'my-timeline'
-            // font: 'Bevan-PotanoSans',
         });
     });
 </script>
-<div id="my-timeline"></div>
 
-<a class="btn btn-default" href="/">Back</a>
+<div id="my-timeline"></div>
+<a class="btn btn-primary" href="/">Back</a>

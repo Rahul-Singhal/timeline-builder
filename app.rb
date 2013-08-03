@@ -10,9 +10,9 @@ post '/timeline' do
   if no_wiki_article(@name)
     erb :notfound
   else
-    # code to get the SOLR link
-    get_json(@name, link)
-  # get_json("Maruti", "http://localhost:8983/solr/collection1/select/?indent=on&q=Maruti&fl=name,id,date&wt=json")
+    url_safe_name = @name.gsub(/ +/,'+')
+    query = "http://localhost:8983/solr/collection1/select/?indent=on&q=#{url_safe_name}&wt=json"
+    @json = get_json(@name, query)
     erb :timeline
   end
 end
@@ -32,10 +32,10 @@ helpers do
 
     events = json_hash["response"]["docs"] # events is an array of hashes
 
-    @result = JSON.parse(IO.read('/template.json')) # load the template_hash
+    @result = JSON.parse(IO.read('template.json')) # load the template_hash
 
     @result["timeline"]["headline"] = "Timeline for #{name}"
-    @result["timeline"]["text"] = "<p>Here's the latest news for #{name}.</p>"
+    @result["timeline"]["text"] = "<p>Here's the timeline for #{name}.</p>"
 
     #clear the "date" key from result
     @result["timeline"]["date"] = []
@@ -43,7 +43,51 @@ helpers do
     events.each do |event|
       headline = event["name"]
       date = parse_date(event["date"])
-      new_event = { "startDate" => date, "headline" => headline, "text" => "Some filler text" }
+
+      link = "http://www.hindustantimes.com/a/a/a/" + event["link"]
+      body = event["body"]
+      image = event["images"][0].chop # chop to remove the trailing comma
+
+      puts "+%"*45
+      puts body
+      puts "+%"*45
+
+      summary_array = `python summarize.py "#{body.gsub('"','\"')}"`
+
+      unless summary_array.empty?
+        summary_array = JSON.load(summary_array) 
+        summary_uniq = []
+        10.times { summary_uniq << summary_array.sample }
+        summary_uniq.uniq!
+        summary_uniq = summary_uniq[0..3]
+      else
+        puts "=|"*50
+        puts summary_uniq
+        puts "=|"*50
+        summary_uniq = ["filler"]
+      end
+
+      if image.empty?
+        media = ""
+        summary_uniq.each do |sentence|
+          media << "<blockquote>#{sentence}</blockquote>"
+        end
+      else
+        media = image
+      end
+
+      new_event = {
+        "startDate" => date,
+        "headline" => headline,
+        # "text" => "<a href=#{link}>Link to the article</a>",
+        "asset" => {
+          # "media" => link,
+          # "media" => "<blockquote>Sample 1</blockquote><blockquote>Sample 2</blockquote>",
+          "media" => media,
+          "credit" => "",
+          "caption" => ""
+        }
+      }
       @result["timeline"]["date"].push(new_event)
     end
 
