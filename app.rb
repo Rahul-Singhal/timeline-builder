@@ -35,7 +35,14 @@ helpers do
     @result = JSON.parse(IO.read('template.json')) # load the template_hash
 
     @result["timeline"]["headline"] = "Timeline for #{name}"
-    @result["timeline"]["text"] = "<p>Here's the timeline for #{name}.</p>"
+    @result["timeline"]["text"] = "<p>Here's the timeline for #{name.capitalize}.</p>"
+
+    #link to the wikipedia page
+    @result["timeline"]["asset"] = {
+      "media" => get_wiki_article(name),
+      "credit" => "",
+      "caption" => "<em>Click on the title above to read the full Wikipedia article for #{name.capitalize}</em>"
+    }
 
     #clear the "date" key from result
     @result["timeline"]["date"] = []
@@ -52,7 +59,12 @@ helpers do
       puts body
       puts "+%"*45
 
-      summary_array = `python summarize.py "#{body.gsub('"','\"')}"`
+      sbody = body.gsub('"', '\\\"')
+      sbody = body.gsub('"', '\"')
+      # sbody = sbody.gsub("'", "''")
+      sbody = sbody.gsub('`', "'")
+
+      summary_array = `python summarize.py "#{sbody}"`
 
       unless summary_array.empty?
         summary_array = JSON.load(summary_array) 
@@ -71,7 +83,7 @@ helpers do
         media = ""
         summary_uniq.each do |sentence|
           addition = "<blockquote>#{sentence}</blockquote>"
-          media << addition unless (media+addition).length > 600
+          media << addition unless (media+addition).length > 500
         end
         # media = "<blockquote>#{summary_array.sample}</blockquote>"
       else
@@ -110,5 +122,10 @@ helpers do
     result_string = `curl "http://en.wikipedia.org/w/api.php?action=opensearch&search=#{search}"`
     result_json = JSON.load(result_string)[1]
     result_json.empty?
+  end
+
+  def get_wiki_article(name)
+    name = name.strip.gsub('\s+','+')
+    "http://en.wikipedia.org/wiki/#{name}"
   end
 end
