@@ -34,14 +34,16 @@ helpers do
 
     @result = JSON.parse(IO.read('template.json')) # load the template_hash
 
+    cap_name = name.split.map { |w| w.capitalize }.join
+
     @result["timeline"]["headline"] = "Timeline for #{name}"
-    @result["timeline"]["text"] = "<p>Here's the timeline for #{name.capitalize}.</p>"
+    @result["timeline"]["text"] = "<p>Here's the timeline for #{cap_name}.</p>"
 
     #link to the wikipedia page
     @result["timeline"]["asset"] = {
       "media" => get_wiki_article(name),
       "credit" => "",
-      "caption" => "<em>Click on the title above to read the full Wikipedia article for #{name.capitalize}</em>"
+      "caption" => "<em>Click on the title above to read the full Wikipedia article for #{cap_name}</em>"
     }
 
     #clear the "date" key from result
@@ -53,11 +55,11 @@ helpers do
 
       link = "http://www.hindustantimes.com/a/a/a/" + event["link"]
       body = event["body"]
-      image = event["images"][0].chop # chop to remove the trailing comma
+      image = event["images"][0].split(',').first || event["images"][0].chop
 
-      puts "+%"*45
-      puts body
-      puts "+%"*45
+      # puts "+%"*45
+      # puts body
+      # puts "+%"*45
 
       sbody = body.gsub('"', '\\\"')
       sbody = body.gsub('"', '\"')
@@ -73,9 +75,9 @@ helpers do
         summary_uniq.uniq!
         summary_uniq = summary_uniq[0..2]
       else
-        puts "=|"*50
-        puts summary_uniq
-        puts "=|"*50
+        # puts "=|"*50
+        # puts summary_uniq
+        # puts "=|"*50
         summary_uniq = ["filler"]
       end
 
@@ -125,7 +127,7 @@ helpers do
   end
 
   def get_wiki_article(name)
-    name = name.strip.gsub('\s+','+')
+    name = name.strip.gsub('\s+','+').capitalize
     "http://en.wikipedia.org/wiki/#{name}"
   end
 end

@@ -4,13 +4,8 @@ body {
 	background: url('/img/brickwall.png');
 }
 
-/*h1 {
-	font-size: 64px;
-	font-weight: bold;
-}*/
-
 section {
-	margin-top: 20px;
+	margin-top: 10px;
 	margin-left: auto;
 	margin-right: auto;
 	/*width: 710px;*/
