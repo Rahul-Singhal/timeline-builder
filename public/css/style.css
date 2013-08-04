@@ -45,6 +45,10 @@ section {
 h1 {
   font: 400 95px/1.6 'Pacifico', Georgia, serif;
 }
+
+h2,h3,h4,h5,h6 {
+	font-family: 'Pacifico', Georgia, serif;
+}
  
 /*p {
   font: 400 16px/1.6 'Arimo', Verdana, Helvetica, sans-serif;
